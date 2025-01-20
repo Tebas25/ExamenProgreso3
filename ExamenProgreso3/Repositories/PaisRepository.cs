@@ -1,11 +1,24 @@
 ﻿using ExamenProgreso3.Interfaces;
 using ExamenProgreso3.Models;
+using SQLite;
 using System.Text.Json.Nodes;
 
 namespace ExamenProgreso3.Repositories
 {
     public class PaisRepository : IPaisRepositoy
     {
+        private static string NombreDB = "Almeida.db3";
+        private SQLiteConnection _conexion;
+
+        public PaisRepository() { Init(); }
+
+        public void Init()
+        {
+            string _dbPath = Path.Combine(FileSystem.AppDataDirectory, NombreDB);
+            _conexion = new SQLiteConnection(_dbPath);
+            _conexion.CreateTable<PaisDB>();
+        }
+
         public async Task PaisAPI(string nombrePais)
         {
             var pais = new PaisAPI();
@@ -33,7 +46,13 @@ namespace ExamenProgreso3.Repositories
 
         public void UpdatePaisDb(PaisDB paisDB)
         {
-            throw new NotImplementedException();
+            PaisDB pais = new PaisDB
+            {
+                Name = paisDB.Name,
+                Region = paisDB.Region,
+                Map = paisDB.Map
+            };
+            _conexion.Insert(pais);
         }
     }
 }
