@@ -8,6 +8,8 @@ namespace ExamenProgreso3.Models
 {
     public class Pais
     {
-        public
+        public string Name { get; set; }
+        public string Region { get; set; }
+        public string Maps { get; set; }
     }
 }
