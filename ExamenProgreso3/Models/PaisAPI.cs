@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamenProgreso3.Models
 {
-    public class Pais
+    public class PaisAPI
     {
 
         public class Class1

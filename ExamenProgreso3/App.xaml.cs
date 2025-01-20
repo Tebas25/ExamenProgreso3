@@ -1,4 +1,6 @@
-﻿namespace ExamenProgreso3
+﻿using ExamenProgreso3.Views;
+
+namespace ExamenProgreso3
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new PaginaConsulta();
         }
     }
 }

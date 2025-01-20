@@ -9,6 +9,7 @@ namespace ExamenProgreso3.Interfaces
 {
     public interface IPaisRepositoy
     {
-        Task<Pais> Pais(string nombrePais);
+        Task PaisAPI(string nombrePais);
+        void UpdatePaisDb(PaisDB paisDB);
     }
 }
