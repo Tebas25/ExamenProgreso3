@@ -9,7 +9,7 @@ namespace ExamenProgreso3.Models
     public class PaisAPI
     {
 
-        public class Class1
+        public class PaisDB
         {
             public Name name { get; set; }
             public string region { get; set; }
