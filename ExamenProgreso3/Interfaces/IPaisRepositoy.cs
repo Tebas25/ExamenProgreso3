@@ -11,5 +11,6 @@ namespace ExamenProgreso3.Interfaces
     {
         Task PaisAPI(string nombrePais);
         void UpdatePaisDb(PaisDB paisDB);
+        PaisDB GetPaisFromDb(string nombrePais);
     }
 }
